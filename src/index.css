@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Custom global styles */
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ✅ Fix: remove translate-y from @apply — use in Vue directly instead */
+.section-fade {
+  opacity: 0;
+  transform: translateY(1.5rem); /* same as translate-y-6 */
+  transition: all 0.7s ease;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@font-face {
+  font-family: 'Galyon';
+  src: url('/fonts/Galyon-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Galyon', serif;
+}
+@keyframes scroll-track {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-track 10s linear infinite;
+}
+
+img {
+  flex-shrink: 0;
+  height: 56px; /* consistent logo height */
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
