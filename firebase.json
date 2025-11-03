@@ -11,8 +11,13 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "/lander",
+        "destination": "/",
+        "type": 301
+      }
     ]
   }
 }
-
-
