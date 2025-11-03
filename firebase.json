@@ -17,6 +17,11 @@
         "source": "/lander",
         "destination": "/",
         "type": 301
+      },
+      {
+        "source": "www.mtadv.com",
+        "destination": "https://mtadv.com",
+        "type": 301
       }
     ]
   }
