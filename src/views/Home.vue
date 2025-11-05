@@ -64,50 +64,52 @@
       </div>
     </section>
 
-    <!-- Work Section -->
-    <section id="work" class="py-28 bg-white text-black">
-      <div class="max-w-[1600px] mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-light mb-20 text-center uppercase tracking-tight">
-          Our Work
-        </h2>
+<!-- Work Section -->
+<section id="work" class="py-28 bg-white text-black">
+  <div class="max-w-[1700px] mx-auto px-8 md:px-12">
+    <h2
+      class="text-4xl md:text-5xl font-light mb-20 text-center uppercase tracking-tight"
+    >
+      Our Work
+    </h2>
 
-        <div
-          class="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12"
-          style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));"
-        >
-          <div
-            v-for="project in projects"
-            :key="project.id"
-            class="relative cursor-pointer group overflow-hidden"
-            @click="goToProject(project.slug)"
-          >
-            <div
-              class="inline-block align-top m-[20px] cursor-pointer group overflow-hidden relative"
-              :class="{
-                'w-[700px] h-[450px]': project.aspect === 'landscape',
-                'w-[300px] h-[420px]': project.aspect === 'portrait',
-                'w-[550px] h-[450px]': project.aspect === 'square',
-              }"
-            >
-              <img
-                :src="project.image"
-                :alt="project.title"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500"></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out"
-              >
-                <p class="text-sm font-light mb-1">{{ project.brand }}</p>
-                <h3 class="text-xl md:text-2xl font-light leading-snug">
-                  {{ project.title }}
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Fluid Grid -->
+    <div class="work-grid">
+  <div
+    v-for="(project, index) in projects"
+    :key="project.id"
+    class="relative group overflow-hidden cursor-pointer rounded-2xl"
+    :class="[
+      project.aspect,
+      project.type === 'video' ? 'video-item' : 'image-item',
+    ]"
+    @click="goToProject(project.slug)"
+  >
+    <component
+      :is="project.type === 'video' ? 'video' : 'img'"
+      :src="project.image"
+      :alt="project.title"
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      v-bind="project.type === 'video' ? { loop: true, muted: true, playsinline: true } : {}"
+      @mouseenter="e => e.target.play?.()"
+      @mouseleave="e => e.target.pause?.()"
+    />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500"></div>
+
+    <!-- Text -->
+    <div class="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out">
+      <p class="text-sm font-light mb-1">{{ project.brand }}</p>
+      <h3 class="text-xl md:text-2xl font-light leading-snug">{{ project.title }}</h3>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
 
     <!-- Contact Section -->
     <section
@@ -197,13 +199,15 @@ const contactVisible = ref(false)
 
 // Projects
 const projects = ref([
-  { id: 1, slug: '2B 25th Anniversary', image: '/work/2B25years.png', brand: '2B', aspect: 'portrait' },
-  { id: 2, slug: 'La Nature', image: '/work/lanature.png', brand: 'La Nature', aspect: 'portrait' },
-  { id: 3, slug: 'Rivoli', image: '/work/rivoli.png', brand: 'Rivoli', aspect: 'portrait' },
-  { id: 4, slug: 'AAIMF', image: '/work/aaimf.png', brand: 'AAIMF', aspect: 'portrait' },
-  { id: 5, slug: '2B Back to School', image: '/work/2bbacktoschool.png', brand: '2B', aspect: 'portrait' },
-  { id: 6, slug: 'Halan Salka Song', image: '/work/halan.png', brand: 'Halan', aspect: 'portrait' },
+  { id: 1, slug: '2B Black Friday', image: '/work/2Bblackfriday.mp4', brand: '2B', type: 'video', aspect: 'landscape' }, 
+  { id: 2, slug: 'LaNature', image: '/work/lanature.png', brand: 'La Nature', type: 'image', aspect: 'square' },
+  { id: 3, slug: '2B25years', image: '/work/2B25years.png', brand: '2B', type: 'image', aspect: 'square' },
+  { id: 4, slug: 'Rivoli', image: '/work/rivolivideo.mp4', brand: 'Rivoli', type: 'video', aspect: 'landscape' },
+  { id: 5, slug: 'AAIMF', image: '/work/aaimfvideo.mp4', brand: 'AAIMF', type: 'video', aspect: 'square' },
+  { id: 6, slug: '2BBackToSchool', image: '/work/2bbacktoschool.mp4', brand: '2B', type: 'video', aspect: 'square' },
+  { id: 7, slug: 'HalanSalka', image: '/work/halan.mp4', brand: 'Halan', type: 'video', aspect: 'square' },
 ])
+
 
 // Contact form data
 const form = ref({
@@ -252,3 +256,79 @@ onMounted(() => {
   if (contactRef.value) obs2.observe(contactRef.value)
 })
 </script>
+<style scoped>
+/* === Refined Editorial Grid (Tighter 1200px Version) === */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr; /* balanced tighter ratio */
+  grid-auto-rows: 450px; /* shorter and elegant */
+  gap: 1.5rem;
+  align-items: stretch;
+  max-width: 1200px; /* narrower grid */
+  margin: 0 auto; /* center the grid */
+  padding: 0 1.5rem; /* soft side padding */
+}
+
+/* Shape variations */
+.landscape {
+  grid-column: span 2;
+}
+.square {
+  grid-column: span 1;
+}
+.portrait {
+  grid-column: span 1;
+  grid-row: span 2; /* taller, elegant vertical cards */
+}
+
+/* Smooth hover feel */
+.work-grid > div {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  background: #000;
+  height: 100%;
+}
+.work-grid > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Image & video styling */
+#work img,
+#work video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+.group:hover img,
+.group:hover video {
+  transform: scale(1.05);
+}
+
+/* Overlay transition */
+.work-grid .absolute.inset-0.bg-black\/0 {
+  pointer-events: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 1280px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 380px;
+    max-width: 950px;
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 340px;
+    max-width: 90%;
+    gap: 1.25rem;
+  }
+}
+</style>
