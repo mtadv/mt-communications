@@ -111,78 +111,80 @@
 
 
 
-    <!-- Contact Section -->
-    <section
-      id="contact"
-      ref="contactRef"
-      :class="contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
-      class="transition-all duration-700 py-28 bg-gray-50"
-    >
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-light mb-6 uppercase tracking-tight">
-          Let’s Talk
-        </h2>
-        <p class="text-gray-700 text-lg mb-10">
-          Have a project in mind? We'd love to hear from you.
-        </p>
+ <!-- Contact Section -->
+<section
+  id="contact"
+  ref="contactRef"
+  :class="contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+  class="transition-all duration-700 py-28 bg-gray-50"
+>
+  <div class="contact-container max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-light mb-6 uppercase tracking-tight">
+      Let’s Talk
+    </h2>
+    <p class="text-gray-700 text-lg mb-12 max-w-2xl mx-auto">
+      Have a project in mind? We'd love to hear from you.
+    </p>
 
-        <form @submit.prevent="sendMessage" class="space-y-6 text-left max-w-2xl mx-auto">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-            <input
-              type="text"
-              id="name"
-              v-model="form.name"
-              required
-              class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:outline-none"
-              placeholder="Your name"
-            />
-          </div>
+    <form @submit.prevent="sendMessage" class="space-y-8 text-left">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+          <input
+            type="text"
+            id="name"
+            v-model="form.name"
+            required
+            class="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-black focus:outline-none bg-white"
+            placeholder="Your name"
+          />
+        </div>
 
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              v-model="form.email"
-              required
-              class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:outline-none"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-            <textarea
-              id="message"
-              v-model="form.message"
-              required
-              rows="5"
-              class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:outline-none resize-none"
-              placeholder="Tell us about your project..."
-            ></textarea>
-          </div>
-
-          <div class="text-center">
-            <button
-              type="submit"
-              class="px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
-
-        <p class="text-gray-700">
-          Or email us directly at
-          <a
-            href="mailto:marketing@mtadv.com"
-            class="text-black font-medium underline hover:no-underline"
-            >marketing@mtadv.com</a
-          >
-        </p>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+          <input
+            type="email"
+            id="email"
+            v-model="form.email"
+            required
+            class="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-black focus:outline-none bg-white"
+            placeholder="you@example.com"
+          />
+        </div>
       </div>
-    </section>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+        <textarea
+          id="message"
+          v-model="form.message"
+          required
+          rows="6"
+          class="w-full border border-gray-300 rounded-xl px-5 py-4 focus:ring-2 focus:ring-black focus:outline-none resize-none bg-white"
+          placeholder="Tell us about your project..."
+        ></textarea>
+      </div>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          class="px-10 py-3 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
+
+    <p class="text-gray-700 mt-12 text-lg">
+      Or email us directly at
+      <a
+        href="mailto:marketing@mtadv.com"
+        class="text-black font-medium underline hover:no-underline"
+        >marketing@mtadv.com</a
+      >
+    </p>
+  </div>
+</section>
   </div>
 </template>
 
@@ -323,12 +325,71 @@ onMounted(() => {
     gap: 1.25rem;
   }
 }
+
 @media (max-width: 768px) {
+  #work {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
   .work-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: 340px;
     max-width: 90%;
     gap: 1.25rem;
+    height: auto !important;
+    overflow: visible !important;
+    display: grid !important;
+  }
+
+  #work > div,
+  #work > section,
+  #work .max-w-7xl {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #work .work-grid > * {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+  
+</style>
+
+<style scoped>
+/* === Clean, Centered Contact Layout === */
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Input field consistency */
+input,
+textarea {
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .contact-container {
+    max-width: 700px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-container {
+    max-width: 90%;
+    padding: 0 1rem;
   }
 }
 </style>
