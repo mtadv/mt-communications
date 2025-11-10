@@ -83,7 +83,7 @@
       project.aspect,
       project.type === 'video' ? 'video-item' : 'image-item',
     ]"
-    @click="goToProject(project.slug)"
+    @click="openProject(project.slug)"
   >
     <component
       :is="project.type === 'video' ? 'video' : 'img'"
@@ -192,7 +192,15 @@
 import HeroVideo from '@/components/HeroVideo.vue'
 import { ref, onMounted } from 'vue'
 import emailjs from 'emailjs-com'
+import { projectsData } from '@/data/projectsData.js'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
+const projectData = projectsData
+
+function openProject(slug) {
+  router.push(`/work/${slug}`)
+}
 // Section animations
 const aboutRef = ref(null)
 const contactRef = ref(null)
@@ -201,8 +209,8 @@ const contactVisible = ref(false)
 
 // Projects
 const projects = ref([
-  { id: 1, slug: '2B Black Friday', image: '/work/2Bblackfriday.mp4', brand: '2B', type: 'video', aspect: 'landscape' }, 
-  { id: 2, slug: 'LaNature', image: '/work/lanature.png', brand: 'La Nature', type: 'image', aspect: 'square' },
+  { id: 1, slug: '2B-Black-Friday', image: '/work/2Bblackfriday.mp4', brand: '2B', type: 'video', aspect: 'landscape' }, 
+  { id: 2, slug: 'LaNature', image: '/work/lanature.mp4', brand: 'La Nature', type: 'video', aspect: 'square' },
   { id: 3, slug: '2B25years', image: '/work/2B25years.png', brand: '2B', type: 'image', aspect: 'square' },
   { id: 4, slug: 'Rivoli', image: '/work/rivolivideo.mp4', brand: 'Rivoli', type: 'video', aspect: 'landscape' },
   { id: 5, slug: 'AAIMF', image: '/work/aaimfvideo.mp4', brand: 'AAIMF', type: 'video', aspect: 'square' },
