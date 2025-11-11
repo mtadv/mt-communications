@@ -349,16 +349,12 @@ onMounted(() => {
 
   .work-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    grid-auto-rows: 340px;
     max-width: 90%;
     gap: 1.25rem;
-  }
-
-  .work-grid > div.landscape,
-  .work-grid > div.portrait,
-  .work-grid > div.square {
-    grid-column: span 1 !important;
-    grid-row: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: grid !important;
   }
 
   #work > div,
