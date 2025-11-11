@@ -90,7 +90,13 @@
       :src="project.image"
       :alt="project.title"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-      v-bind="project.type === 'video' ? { loop: true, muted: true, playsinline: true } : {}"
+      v-bind="project.type === 'video' ? { 
+    autoplay: true, 
+    loop: true, 
+    muted: true, 
+    playsinline: true, 
+    poster: project.poster || '/default-poster.jpg'
+  } : {}"
       @mouseenter="e => e.target.play?.()"
       @mouseleave="e => e.target.pause?.()"
     />
