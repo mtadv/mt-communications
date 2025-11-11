@@ -347,7 +347,6 @@ onMounted(() => {
     display: block !important;
   }
 
-  @media (max-width: 768px) {
   .work-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
@@ -361,8 +360,6 @@ onMounted(() => {
     grid-column: span 1 !important;
     grid-row: auto !important;
   }
-}
-
 
   #work > div,
   #work > section,
