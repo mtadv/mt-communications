@@ -347,15 +347,22 @@ onMounted(() => {
     display: block !important;
   }
 
+  @media (max-width: 768px) {
   .work-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: 340px;
+    grid-auto-rows: auto;
     max-width: 90%;
     gap: 1.25rem;
-    height: auto !important;
-    overflow: visible !important;
-    display: grid !important;
   }
+
+  .work-grid > div.landscape,
+  .work-grid > div.portrait,
+  .work-grid > div.square {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+}
+
 
   #work > div,
   #work > section,
