@@ -20,10 +20,10 @@ export const projectsData = [
   Through these relatable profiles and an engaging creative execution, MT for Communications helped 2B deliver a memorable and energetic Black Friday campaign that boosted brand engagement.
       `,
       gallery: [
-        '/work/projectdata/2BBlackFriday/1.png',
-        '/work/projectdata/2BBlackFriday/2.mp4',
-        '/work/projectdata/2BBlackFriday/3.mp4',
-        '/work/projectdata/2BBlackFriday/4.png',
+        { src: '/work/projectdata/2BBlackFriday/1.png', aspect: 'square' },
+        { src:'/work/projectdata/2BBlackFriday/2.mp4',aspect: 'landscape' },
+        { src:'/work/projectdata/2BBlackFriday/3.mp4',aspect: 'landscape' },
+        { src:'/work/projectdata/2BBlackFriday/4.png',aspect: 'square' },
       ],
     },
     {
@@ -38,10 +38,10 @@ export const projectsData = [
   MT for Communications developed a complete brand identity — from logo and packaging to visual guidelines — creating a fresh, authentic, and nature-inspired identity that embodies La Nature’s philosophy: harnessing the power of nature to promote wellness and vitality.
       `,
       gallery: [
-        '/work/projectdata/LaNature/1.png',
-        '/work/projectdata/LaNature/2.png',
-        '/work/projectdata/LaNature/3.png',
-        '/work/projectdata/LaNature/4.png',
+        { src:  '/work/projectdata/LaNature/1.png',aspect: 'landscape' },
+        { src:  '/work/projectdata/LaNature/2.png',aspect: 'landscape' },
+        { src: '/work/projectdata/LaNature/3.png',aspect: 'landscape' },
+        { src: '/work/projectdata/LaNature/4.png',aspect: 'landscape' },
       ],
     },
     {
@@ -55,7 +55,7 @@ export const projectsData = [
   We broke industry conventions with a fashion-inspired creative direction — blending technology and lifestyle in a visually stunning way. Instead of product-centric visuals, we styled electronics as accessories in a high-fashion shoot, creating a powerful and trendsetting image that celebrated 25 years of innovation.
       `,
       gallery: [
-        '/work/projectdata/2B25years/1.png',
+        { src: '/work/projectdata/2B25years/1.png',aspect: 'square' },
         
         
       ],
@@ -71,10 +71,10 @@ export const projectsData = [
   We built the campaign around the idea of inner beauty — showing that the beauty we carry often comes from our mothers. Through heartfelt storytelling and emotional video content, MT for Communications brought this message to life, reinforcing that we are reflections of our mothers’ kindness and grace.
       `,
       gallery: [
-        '/work/projectdata/Rivoli/1.png',
-        '/work/projectdata/Rivoli/2.png',
-        '/work/projectdata/Rivoli/3.png',
-        '/work/projectdata/Rivoli/4.png',
+        { src: '/work/projectdata/Rivoli/1.png',aspect: 'landscape' },
+        { src: '/work/projectdata/Rivoli/2.png',aspect: 'landscape' },
+        { src:  '/work/projectdata/Rivoli/3.png',aspect: 'landscape' },
+        { src: '/work/projectdata/Rivoli/4.png',aspect: 'landscape' },
       ],
     },
     {
@@ -88,10 +88,10 @@ export const projectsData = [
   We developed a cohesive digital identity and social media strategy that positioned AAIMF as Egypt’s smart, reliable mortgage partner. Through fresh visuals and story-driven content, we helped redefine the brand as a confident and modern player in the finance sector.
       `,
       gallery: [
-        '/work/projectdata/AAIMF/1.png',
-        '/work/projectdata/AAIMF/2.png',
-        '/work/projectdata/AAIMF/3.png',
-        '/work/projectdata/AAIMF/4.png',
+        { src: '/work/projectdata/AAIMF/1.png',aspect: 'square' },
+        { src:  '/work/projectdata/AAIMF/2.png',aspect: 'square' },
+        { src:  '/work/projectdata/AAIMF/3.png',aspect: 'square' },
+        { src: '/work/projectdata/AAIMF/4.png',aspect: 'square' },
       ],
     },
     {
@@ -105,8 +105,8 @@ export const projectsData = [
   Each offer was presented as a playful class subject, making the campaign feel energetic, youthful, and full of motion. The result: a small campaign with big creative impact.
       `,
       gallery: [
-        '/work/projectdata/2BBackToSchool/1.mp4',
-        '/work/projectdata/2BBackToSchool/2.mp4',
+        { src: '/work/projectdata/2BBackToSchool/1.mp4',aspect: 'landscape' },
+        { src:  '/work/projectdata/2BBackToSchool/2.mp4',aspect: 'square' },
         
       ],
     },
