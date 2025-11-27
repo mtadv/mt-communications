@@ -215,13 +215,13 @@ const contactVisible = ref(false)
 
 // Projects
 const projects = ref([
-  { id: 1, slug: '2B-Black-Friday', image: '/work/2Bblackfriday.mp4', brand: '2B', type: 'video', aspect: 'landscape' }, 
-  { id: 2, slug: 'LaNature', image: '/work/lanature.mp4', brand: 'La Nature', type: 'video', aspect: 'square' },
-  { id: 3, slug: '2B25years', image: '/work/2B25years.png', brand: '2B', type: 'image', aspect: 'square' },
-  { id: 4, slug: 'Rivoli', image: '/work/rivolivideo.mp4', brand: 'Rivoli', type: 'video', aspect: 'landscape' },
-  { id: 5, slug: 'AAIMF', image: '/work/aaimfvideo.mp4', brand: 'AAIMF', type: 'video', aspect: 'square' },
-  { id: 6, slug: '2BBackToSchool', image: '/work/2bbacktoschool.mp4', brand: '2B', type: 'video', aspect: 'square' },
-  { id: 7, slug: 'HalanSalka', image: '/work/halan.mp4', brand: 'Halan', type: 'video', aspect: 'square' },
+  { id: 1, slug: '2B-Black-Friday', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2F2Bblackfriday.mp4?alt=media&token=b2d4718c-984d-49fe-b96e-21d1f0ea605c', brand: '2B', type: 'video', aspect: 'landscape' }, 
+  { id: 2, slug: 'LaNature', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2Flanature.mp4?alt=media&token=fe4ab95a-403a-4c66-a6a7-87ea45f506d4', brand: 'La Nature', type: 'video', aspect: 'square' },
+  { id: 3, slug: '2B25years', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2F2B25years.png?alt=media&token=fa359b0d-d389-4ce7-89e1-b963f82ff166', brand: '2B', type: 'image', aspect: 'square' },
+  { id: 4, slug: 'Rivoli', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2Frivolivideo.mp4?alt=media&token=872be362-2cff-4b1e-af0a-7447617572a4', brand: 'Rivoli', type: 'video', aspect: 'landscape' },
+  { id: 5, slug: 'AAIMF', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2Faaimfvideo.mp4?alt=media&token=88606476-a5b3-42db-aed5-f28e8211e8f5', brand: 'AAIMF', type: 'video', aspect: 'square' },
+  { id: 6, slug: '2BBackToSchool', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2F2bbacktoschool.mp4?alt=media&token=038025ae-97b2-44ee-9cc2-882f051d912c', brand: '2B', type: 'video', aspect: 'square' },
+  { id: 7, slug: 'HalanSalka', image: 'https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/work%2Fhalan.mp4?alt=media&token=b99b1636-18bc-4885-a702-a0d136d611cd', brand: 'Halan', type: 'video', aspect: 'square' },
 ])
 
 

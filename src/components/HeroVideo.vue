@@ -8,7 +8,7 @@
       playsinline
       class="hero-video absolute inset-0 w-full h-full object-cover"
     >
-      <source src="/videos/agency-intro.mp4" type="video/mp4" />
+      <source src="https://firebasestorage.googleapis.com/v0/b/mt-for-communications.firebasestorage.app/o/videos%2Fagency-intro.mp4?alt=media&token=7dad55d3-390b-434b-929b-113bf1f57239" type="video/mp4" />
     </video>
 
     <!-- Soft White Overlay -->
