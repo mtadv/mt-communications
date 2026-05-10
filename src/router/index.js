@@ -5,6 +5,7 @@ import Clients from '../views/Clients.vue'
 import Work from '../views/Work.vue'
 import Contact from '../views/Contact.vue'
 import ProjectDetail from '../views/ProjectDetail.vue'
+import Zouhor from '../views/Zouhor.vue' 
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -13,6 +14,7 @@ const routes = [
   { path: '/work', name: 'Work', component: Work },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/work/:slug', name: 'ProjectDetail', component: ProjectDetail },
+   { path: '/zouhor', name: 'Zouhor', component: Zouhor },
 ]
 
 export default createRouter({

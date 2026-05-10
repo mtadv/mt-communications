@@ -13,6 +13,7 @@
         <a class="nav-link" @click.prevent="goToSection('clients')">Clients</a>
         <a class="nav-link" @click.prevent="goToSection('work')">Our Work</a>
         <a class="nav-link" @click.prevent="goToSection('contact')">Contact Us</a>
+        <a class="nav-link" @click.prevent="goToZouhor">Zouhor</a>
       </div>
 
       <!-- Hamburger button -->
@@ -36,6 +37,7 @@
       <a class="mobile-link" @click.prevent="goToSection('clients')">Clients</a>
       <a class="mobile-link" @click.prevent="goToSection('work')">Our Work</a>
       <a class="mobile-link" @click.prevent="goToSection('contact')">Contact Us</a>
+      <a class="mobile-link" @click.prevent="goToZouhor">Zouhor</a>
     </div>
   </nav>
 </template>
@@ -62,6 +64,11 @@ const goToSection = (id) => {
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
+}
+
+const goToZouhor = () => {
+  closeMenu()
+  router.push('/zouhor')
 }
 
 // Detect mobile
