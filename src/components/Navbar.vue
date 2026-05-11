@@ -68,7 +68,7 @@ const goToSection = (id) => {
 
 const goToZouhor = () => {
   closeMenu()
-  router.push('/zouhor')
+  window.open('https://zouhor-frontend.vercel.app/', '_blank')
 }
 
 // Detect mobile
