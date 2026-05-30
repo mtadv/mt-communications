@@ -14,6 +14,7 @@
         <a class="nav-link" @click.prevent="goToSection('work')">Our Work</a>
         <a class="nav-link" @click.prevent="goToSection('contact')">Contact Us</a>
         <a class="nav-link" @click.prevent="goToZouhor">Zouhor</a>
+        <a class="nav-link" @click.prevent="goToSignalAI">SignalAI</a>
       </div>
 
       <!-- Hamburger button -->
@@ -38,6 +39,7 @@
       <a class="mobile-link" @click.prevent="goToSection('work')">Our Work</a>
       <a class="mobile-link" @click.prevent="goToSection('contact')">Contact Us</a>
       <a class="mobile-link" @click.prevent="goToZouhor">Zouhor</a>
+      <a class="mobile-link" @click.prevent="goToSignalAI">SignalAI</a>
     </div>
   </nav>
 </template>
@@ -69,6 +71,11 @@ const goToSection = (id) => {
 const goToZouhor = () => {
   closeMenu()
   window.open('https://zouhor-frontend.vercel.app/', '_blank')
+}
+
+const goToSignalAI = () => {
+  closeMenu()
+  window.open('https://signal-ai.mtadv.com', '_blank')
 }
 
 // Detect mobile
